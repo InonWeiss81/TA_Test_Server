@@ -1,0 +1,15 @@
+﻿[{"name": "Yaron", "Address": "Tel Aviv", "Age": 40, "RegistrationDate": "17/05/2020"},
+
+{"name": "Barak", "Address": "Tel Aviv", "Age": 45, "RegistrationDate": "21/6/2021"},
+
+{"name": "Anat", "Address": "Tel Aviv", "Age": 47, "RegistrationDate": "22/12/2022"},
+
+{"name": "Yonit", "Address": "Tel Aviv", "Age": 34, "RegistrationDate": "21/6/2021"},
+
+{"name": "David", "Address": "Tel Aviv", "Age": 25, "RegistrationDate": "17/03/2019"},
+
+{"name": "Liraz", "Address": "Tel Aviv", "Age": 41, "RegistrationDate": "28/02/2020"},
+
+{"name": "Inbar", "Address": "Tel Aviv", "Age": 40, "RegistrationDate": "21/01/2022"},
+
+{"name": "Alex", "Address": "Tel Aviv", "Age": 38, "RegistrationDate": "01/08/2020"}]
