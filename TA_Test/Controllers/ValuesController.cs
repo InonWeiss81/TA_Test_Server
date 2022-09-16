@@ -3,8 +3,6 @@ using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using TA_Test.BL;
 using TA_Test.DAL;
@@ -14,9 +12,18 @@ namespace TA_Test.Controllers
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<Details> Get()
+        public List<Details> Get()
         {
-            return GetData();
+            List<Details> result = null;
+            try
+            {
+                result = GetData();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return result;
         }
 
         private List<Details> GetData()
@@ -27,13 +34,14 @@ namespace TA_Test.Controllers
                 using (DataFromFile dataFromFile = new DataFromFile())
                 {
                     string data = dataFromFile.GetDetails();
-                    result = JsonConvert.DeserializeObject<List<Details>>(data);
+                    result = JsonConvert.DeserializeObject<List<Details>>(data, new IsoDateTimeConverter { DateTimeFormat = Helper.DATE_FORMAT });
                 }
+                result = result.OrderByDescending(x => x.RegistrationDate).ToList();
             }
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             return result;
         }
